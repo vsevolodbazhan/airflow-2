@@ -6,3 +6,6 @@
 
 # Airflow
 logs
+
+# macOS
+.DS_Store
