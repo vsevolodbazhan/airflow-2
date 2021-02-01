@@ -2,9 +2,13 @@ version: '3.8'
 
 x-airflow-common:
   &airflow-common
-  image: ${AIRFLOW_IMAGE}
   env_file:
     - .env
+  build:
+    context: .
+    args:
+      - IMAGE=${AIRFLOW_IMAGE}
+      - USER=${_AIRFLOW_WWW_USER_USERNAME}
   volumes:
     - ./${AIRFLOW_DAGS_DIRECTORY}:/opt/airflow/dags
     - ./${AIRFLOW_PLUGINS_DIRECTORY}:/opt/airflow/plugins
