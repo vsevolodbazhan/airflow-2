@@ -8,7 +8,8 @@ x-airflow-common:
     context: .
     args:
       - IMAGE=${AIRFLOW_IMAGE}
-      - USER=${_AIRFLOW_WWW_USER_USERNAME}
+      - UID=${AIRFLOW_UID}
+      - GID=${AIRFLOW_GID}
   volumes:
     - ./${AIRFLOW_DAGS_DIRECTORY}:/opt/airflow/dags
     - ./${AIRFLOW_PLUGINS_DIRECTORY}:/opt/airflow/plugins
@@ -89,8 +90,6 @@ services:
       timeout: 10s
       retries: 5
     restart: always
-    depends_on:
-      - airflow-worker
 
 volumes:
   postgres-data:

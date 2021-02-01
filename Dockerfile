@@ -1,5 +1,6 @@
 ARG IMAGE
-ARG USER
+ARG UID
+ARG GID
 
 FROM ${IMAGE}
 
@@ -11,7 +12,7 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-USER ${USER}
+USER ${UID}:${GID}
 
 COPY requirements-airflow.txt requirements.txt
 RUN pip install --no-cache-dir --user -r requirements.txt
