@@ -27,9 +27,9 @@ repos:
       - id: safety
         name: safety
         entry: safety
-        args: [check, --full-report]
+        args: [check, --full-report, --file]
         language: system
-        files: requirements-dev requirements-airflow
+        files: requirements
 
       - id: isort
         name: isort
