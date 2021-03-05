@@ -10,7 +10,7 @@ This repository is my vision of a "perfect" development environment for Airflow 
     * Celery (with Flower) is a task queue.
     * Redis is a message broker.
 
-2. `Dockerfile` and `docker-compose` files that are meant to be fully cutomizable through environment variables or `.env` file.
+2. `Dockerfile` and `docker-compose` files that are meant to be fully customizable through environment variables or `.env` file.
 3. Development environment that enforces code quality and safety:
 
     * `pytest` (and `pytest-cov`) is used for unit- and integration testing.
